@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Launchpage</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            background-image: url('/static/images/pexels.jpg');
+            background-size: cover;
+            color: white;
+        }
+
+        main {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .time-cont {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: baseline;
+            justify-content: center;
+        }
+
+    </style>
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <py-env>
+        - paths:
+            - /static/python/countdown.py
+    </py-env>
+</head>
+
+<body>
+
+<main class="w3-display-container">
+    <div class="w3-display-middle">
+        <h1 class="w3-jumbo">Coming Soon!</h1>
+        <div class="time-cont">
+            <p id="time_p" class="w3-large w3-center">10Days 12Hrs 15mns 45s</p>
+            <span>&nbsp;more</span>
+        </div>
+        <py-script>
+            from countdown import get_time
+            import asyncio
+
+
+            async def tell_time():
+                while True:
+                    time_p = Element('time_p').write(get_time())
+                    await asyncio.sleep(1)
+
+
+            pyscript.run_until_complete(tell_time())
+
+        </py-script>
+    </div>
+</main>
+
+</body>
+</html>
