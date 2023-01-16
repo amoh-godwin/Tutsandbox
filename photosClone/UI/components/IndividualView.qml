@@ -93,6 +93,7 @@ Component {
             Rectangle {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
+                color: "#90202020"
             }
         }
 
