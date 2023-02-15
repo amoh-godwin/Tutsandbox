@@ -26,7 +26,7 @@ Component {
             Rectangle {
                 anchors.top: parent.top
                 anchors.right: parent.right
-                width: fileInfoCont.visible ? parent.width - fileInfoCont.width : parent.width
+                width: fileInfoCont.visible && portrait ? parent.width : fileInfoCont.visible ? parent.width - fileInfoCont.width : parent.width
                 height: fileInfoCont.visible && portrait ? parent.height / 2 : parent.height
                 color: "transparent"
 
