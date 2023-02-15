@@ -119,6 +119,15 @@ ApplicationWindow {
     Comp.IndividualView {id: individual }
 
 
+    Popup {
+        anchors.centerIn: parent
+        width: 300
+        height: 200
+        modal: true
+        dim: true
+        visible: false
+    }
+
     background: Rectangle {
         width: parent.width
         height: parent.height
