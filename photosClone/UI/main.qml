@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls.Universal
 import QtQuick.Layouts
+import QtQuick.Dialogs
 import "./components" as Comp
 
 ApplicationWindow {
@@ -126,6 +127,12 @@ ApplicationWindow {
         modal: true
         dim: true
         visible: false
+    }
+
+    FileDialog {
+        id: fileDialog
+        nameFilters: ["Photos (*.jpg)"]
+        onAccepted: currImageSource = selectedFile
     }
 
     background: Rectangle {
