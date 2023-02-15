@@ -24,7 +24,7 @@ import QtQuick.Layouts
 
                 ToolButton {
                     id: ctrl
-                    text: "Select photos"
+                    text: "Select Photo"
                     width: 148
                     height: 48
 
@@ -49,6 +49,9 @@ import QtQuick.Layouts
                             font.pixelSize: 16
                         }
                     }
+
+                    onClicked: fileDialog.open()
+
                 }
 
             }
