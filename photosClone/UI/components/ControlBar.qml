@@ -24,7 +24,7 @@ import QtQuick.Layouts
 
                 ToolButton {
                     id: ctrl
-                    text: "View all photos"
+                    text: "Select photos"
                     width: 148
                     height: 48
 
@@ -118,6 +118,9 @@ import QtQuick.Layouts
                     MenuSeparator {}
                     Action {
                         text: "File info"
+                        onTriggered: {
+                            fileInfoCont.visible = !fileInfoCont.visible
+                        }
                     }
                 }
 
