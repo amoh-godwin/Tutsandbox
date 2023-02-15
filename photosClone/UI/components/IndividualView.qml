@@ -8,13 +8,26 @@ Component {
         anchors.fill: parent
         color: "transparent"
 
-        ColumnLayout {
+        Rectangle {
             anchors.fill: parent
-            spacing: 0
+            color: "transparent"
 
             Rectangle {
-                Layout.fillWidth: true
-                Layout.fillHeight: true
+                id: fileInfoCont
+                //Layout.fillWidth: true
+                anchors.left: parent.left
+                anchors.bottom: parent.bottom
+                width: portrait ? parent.width : 200
+                height: portrait ? parent.height / 2 : parent.height
+                color: "#90202020"
+                visible: false
+            }
+
+            Rectangle {
+                anchors.top: parent.top
+                anchors.right: parent.right
+                width: fileInfoCont.visible ? parent.width - fileInfoCont.width : parent.width
+                height: fileInfoCont.visible && portrait ? parent.height / 2 : parent.height
                 color: "transparent"
 
                 Rectangle {
@@ -90,11 +103,6 @@ Component {
 
             }
 
-            Rectangle {
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                color: "#90202020"
-            }
         }
 
     }
