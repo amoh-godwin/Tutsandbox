@@ -7,7 +7,7 @@ from PyQt6.QtQml import QQmlApplicationEngine
 from downloader import Downloader
 
 
-QQuickWindow.setSceneGraphBackend("software")
+# QQuickWindow.setSceneGraphBackend("software")
 
 app = QGuiApplication(sys.argv)
 
