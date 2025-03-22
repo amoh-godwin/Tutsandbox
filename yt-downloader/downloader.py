@@ -4,7 +4,7 @@ import threading
 from dataclasses import dataclass, asdict
 
 from PyQt6.QtCore import QObject, pyqtSlot as Slot, pyqtSignal as Signal
-from pytube import YouTube
+from pytubefix import YouTube
 
 
 @dataclass
